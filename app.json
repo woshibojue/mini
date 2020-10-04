@@ -1,0 +1,16 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#cb4042",
+    "navigationBarTitleText": "龙蛋",
+    "navigationBarTextStyle":"black",
+    "enablePullDownRefresh":true,
+    "backgroundColor": "#ab3b3a"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
