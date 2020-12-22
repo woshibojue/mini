@@ -1,0 +1,54 @@
+<!-- index.wxml -->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+      获取头像昵称
+    </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <navigator url="/pages/demo01/demo01">跳转demo01</navigator>
+  <view class="usermotto">
+    <view class="page-section">
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          原单价：
+          <input class="weui-input" bindinput="op" data-aac="{{121}}" auto-focus placeholder="请输入" />
+        </view>
+        <view class="weui-cell weui-cell_input">
+          原重量：
+          <input class="weui-input" bindinput="ow" auto-focus placeholder="请输入" />
+        </view>
+        <view class="weui-cell weui-cell_input">
+          挑出B重量：
+          <input class="weui-input" bindinput="bw" auto-focus placeholder="请输入" />
+        </view>
+        <view class="weui-cell weui-cell_input">
+          B为原价的折数：
+          <input class="weui-input" bindinput="Dc" auto-focus placeholder="输入零点几，1为原价" />
+        </view>
+        <view class="weui-cell weui-cell_input">
+          是否损耗：
+          <input class="weui-input" bindinput="LOSS" auto-focus placeholder="默认0，亏为正数，出为负" />
+        </view>
+      </view>
+      <view class="weui-cells__title">
+        <view>原单价：{{originalprice}} 元</view>
+        <view>原重量：{{originalweight}} 市斤</view>
+        <view>原总价：{{originalprice*originalweight}} 市斤</view>
+      </view>
+      <view class="bweight">
+        <view>挑出B货重量：{{bweight}} 市斤</view>
+        <view>挑出B货估价：{{originalprice*Discount}} 元</view>
+        <view>挑出B货总值：{{bweight*originalprice*Discount}} 市斤</view>
+      </view>
+      <view class="aweight">
+        <view>A货总重：{{aweight}} 市斤</view>
+        <view>A货估价：{{(originalprice*originalweight-bweight*originalprice*Discount)/aweight}}元</view>
+        <view>A货总价：{{originalprice*originalweight-bweight*originalprice*Discount}}元</view>
+      </view>
+    </view>
+  </view>
+</view>
