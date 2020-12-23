@@ -2,13 +2,14 @@
   "pages":[
     "pages/index/index",
     "pages/demo01/demo01",
+    "pages/demo2/demo02",
 
     "pages/logs/logs"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#cb4042",
-    "navigationBarTitleText": "龙蛋",
+    "navigationBarTitleText": "蛋",
     "navigationBarTextStyle":"black",
     "enablePullDownRefresh":true,
     "backgroundColor": "#ab3b3a"
