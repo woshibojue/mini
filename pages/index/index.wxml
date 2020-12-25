@@ -10,7 +10,6 @@
     </block>
   </view>
   <navigator url="/pages/demo01/demo01">跳转demo01</navigator>
-  <navigator url="/pages/demo02/demo02">跳转demo02</navigator>
  
 
   <view class="usermotto">
