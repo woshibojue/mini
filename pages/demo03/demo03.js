@@ -26,6 +26,22 @@ Page({
         isactive: false,
       },
     ],
+    //自定义事件，用来接收子组件传递过来的数据
+  },
+
+  handleItemChange(e) {
+    console.log(e);
+    const { indexss } = e.detail;
+    console.log(indexss);
+    let { tabs } = this.data;
+    tabs.forEach((v, i) =>
+      i === indexss
+        ? (console.log(v), (v.isactive = true))
+        : (v.isactive = false)
+    );
+    this.setData({
+      tabs,
+    });
   },
 
   /**

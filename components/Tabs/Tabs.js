@@ -27,25 +27,28 @@ Component({
    */
   methods: {
     title_item_tap(e) {
-      console.log("佳儿");
+      //console.log("佳儿");
 
-      console.log(e.currentTarget.dataset.indexss);
+      //console.log(e.currentTarget.dataset.indexss);
       // const{indexss}里面的indexss需要与自定义的data-indexss中的indexss一致
       const { indexss } = e.currentTarget.dataset;
-      console.log({ indexss });
-      console.log(this.data);
+      //触发父组件中的自定义事件，同时传递参数
+      //this.triggerEvent("自定义事件", 传递的参数);
+      this.triggerEvent("itemChange", { indexss });
+      //console.log({ indexss });
+      //console.log(this.data);
       //{tabs}需要与data中的tabs名字一致
-      let { tabs } = this.data;
+      //let { tabs } = this.data;
       //最严谨的做法：对tabs进行深拷贝
       //let tabs = JSON.parse(JSON.stringify(this.data.tabs));
-      tabs.forEach((v, i) =>
-        i === indexss
-          ? (console.log(v), (v.isactive = true))
-          : (v.isactive = false)
-      );
-      this.setData({
-        tabs,
-      });
+      // tabs.forEach((v, i) =>
+      //   i === indexss
+      //     ? (console.log(v), (v.isactive = true))
+      //     : (v.isactive = false)
+      // );
+      // this.setData({
+      //   tabs,
+      // });
     },
   },
 });

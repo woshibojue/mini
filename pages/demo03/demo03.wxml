@@ -1,1 +1,3 @@
-<Tabs tabs="{{tabs}}"></Tabs>
+<!-- 父向子传递数据：通过便签页中的属性传递tabs="{{tabs}}"中的{{tabs}}
+子向父传递数据：通过自定义事件的方式传递 binditemChange="handleItemChange"中的binditemChange中的itemChange -->
+<Tabs tabs="{{tabs}}" binditemChange="handleItemChange"></Tabs>
